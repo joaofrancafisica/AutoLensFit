@@ -1,5 +1,8 @@
 import numpy as np
+import pandas as pd
 from scipy.optimize import minimize
+from astropy.io import fits
+import os
 
 class find_radius:
     def __init__(self, pre_set_sigma, image_array):
@@ -19,3 +22,34 @@ class find_radius:
     def get_radius(self, init_guess=[1., 50, 2], method='Nelder-Mead'):
         result=minimize(self.chi_squared, init_guess, method=method)
         return result.x
+    
+class getlenslight:
+    def __init__(self, pre_path, cutout_name):
+        
+        method_dict = np.array(['ImFit', 'AutoLens', 'Lenstronomy'])
+        self.method_dict = method_dict
+        
+        model_dict = np.array(['SPHSERSIC', 'ELLSERSIC'])
+        self.model_dict = model_dict
+        
+        self.pre_path = pre_path
+        self.cutout_name = cutout_name
+        
+    def read_cutout(self, model, method):
+        if model in self.model_dict and method in self.method_dict:
+            return fits.open(str(self.pre_path)+str(self.cutout_name)+'_'+str(method)+'['+model+'].fits')[0].data
+        else:
+            raise Exception('Your model or method (or both) is/are not in the dictionaries. Please verify the class documentation.')
+    def get_original_cutout(self):
+        return fits.open('./simulations/fits_files/i/'+self.cutout_name+'.fits')[0].data
+
+class getpickle:
+    def __init__(self, pre_path, cutout_name):
+        for root, dirs, files in os.walk(pre_path):
+            if cutout_name in files:
+                full_file_name = os.path.join(root, cutout_name)
+
+        self.full_file_name = full_file_name
+        
+    def read_pickle(self):
+        return pd.read_pickle(str(self.full_file_name))  

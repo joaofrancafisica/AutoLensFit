@@ -1,0 +1,17 @@
+# image characteristics for F475W ACS image
+#GAIN	1.0             # e-/ADU
+#READNOISE	5.0         # e-
+#ORIGINAL_SKY	42.63   # counts/pixel (this value was subtracted from the image)
+
+
+# these are the common coordinates for component centers:
+#param  initial-value  lower,upper limits
+X0    50.0   47.0,53.0
+Y0    50.0   47.0,53.0
+
+FUNCTION   Sersic   # for the bulge
+PA     90.0      0.0,180
+ell	0.0	0.,1.
+n	2.3	0.5,4.0
+I_e	1200.0	-3000.0,3000.0
+r_e	8.50	1,40
