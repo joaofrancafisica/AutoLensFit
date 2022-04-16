@@ -35590,3 +35590,15 @@ TypeError: 'RecursionPromise' object is not iterable
 2022-04-15 13:53:22,513 - 2848 - INFO - 20000 Iterations: Performing update (Visualization, outputting samples, etc.).
 2022-04-15 13:53:28,235 - 2848 - INFO - 25000 Iterations: Performing update (Visualization, outputting samples, etc.).
 2022-04-15 13:53:41,266 - 2848 - INFO - Removing zip file
+2022-04-16 15:33:55,997 - lenstronomy.Sampling.Pool.pool - INFO - Running with SerialPool
+2022-04-16 15:34:08,107 - lenstronomy.Sampling.Pool.pool - INFO - Running with SerialPool
+2022-04-16 15:35:47,333 - lenstronomy.Sampling.Pool.pool - INFO - Running with SerialPool
+2022-04-16 15:54:53,214 - lenstronomy.Sampling.Pool.pool - INFO - Running with SerialPool
+2022-04-16 15:55:27,969 - lenstronomy.Sampling.Pool.pool - INFO - Running with SerialPool
+2022-04-16 15:55:56,213 - lenstronomy.Sampling.Pool.pool - INFO - Running with SerialPool
+2022-04-16 17:10:29,039 - lenstronomy.Sampling.Pool.pool - INFO - Running with SerialPool
+2022-04-16 17:11:11,411 - lenstronomy.Sampling.Pool.pool - INFO - Running with SerialPool
+2022-04-16 17:11:35,522 - lenstronomy.Sampling.Pool.pool - INFO - Running with SerialPool
+2022-04-16 17:12:23,033 - lenstronomy.Sampling.Pool.pool - INFO - Running with SerialPool
+2022-04-16 17:12:59,217 - lenstronomy.Sampling.Pool.pool - INFO - Running with SerialPool
+2022-04-16 17:13:45,799 - lenstronomy.Sampling.Pool.pool - INFO - Running with SerialPool

@@ -9,6 +9,11 @@ import autolens.plot as aplt
 import os
 import matplotlib.pyplot as plt
 import pyimfit
+from lenstronomy.Util import util
+from lenstronomy.Data.imaging_data import ImageData
+from lenstronomy.Workflow.fitting_sequence import FittingSequence
+from lenstronomy.LightModel.light_model import LightModel
+from lenstronomy.ImSim.image_model import ImageModel
 
 sys.path.insert(0, os.getcwd())
 import utils
@@ -33,6 +38,7 @@ ccd_gain = float(modelized_systems_select['ccd_gain-i'][0])
 read_noise = float(modelized_systems_select['read_noise-i'][0])
 print(pixel_scale, seeing, sky_rms, expo_time, zl, zs, ccd_gain, read_noise)
 
+#=========================== AutoLens ================================
 cutout = fits.open(image_pre_path+str(int(name)-1)+'.fits')[0].data
 
 kwargs_psf = {'psf_type': 'GAUSSIAN',
@@ -41,6 +47,7 @@ kwargs_psf = {'psf_type': 'GAUSSIAN',
               'truncation': 4/seeing}
 psf_class = PSF(**kwargs_psf)
 psf = psf_class.kernel_point_source/np.max(psf_class.kernel_point_source)
+'''
 #print(psf)
 noise_map = np.sqrt((cutout*expo_time+float(sky_rms**2)))/expo_time
 
@@ -86,7 +93,7 @@ step_0_result = search.fit(model=lens_light_model, analysis=analysis)
 hdu = fits.PrimaryHDU(data=(step_0_result.unmasked_model_image).reshape(100, 100))
 hdu.writeto('./fits_results/lens_light/'+str(name)+'_AutoLens[ELLSERSIC].fits')
 
-## ImFit
+#=========================== ImFit ================================
 imfitConfigFile = "./config_imfit/config_galaxy.dat"
 model_desc = pyimfit.ModelDescription.load(imfitConfigFile)
 
@@ -105,35 +112,74 @@ if imfit_fitter.fitConverged is True:
 
 hdu = fits.PrimaryHDU(data=imfit_fitter.getModelImage())
 hdu.writeto('./fits_results/lens_light/'+str(name)+'_ImFit[ELLSERSIC].fits')
-
 '''
-residual_image = al.Array2D.manual(np.array(cutout, dtype=float), pixel_scales=float(pixel_scale)) - step_0_result.unmasked_model_image
+#=========================== Lenstronomy ================================
+# general configurations
+_, _, ra_at_xy_0, dec_at_xy_0, _, _, Mpix2coord, _ = util.make_grid_with_coordtransform(numPix=100, # horizontal (or vertical number of pixels) 
+                                                                                        deltapix=pixel_scale, # pixel scale
+                                                                                        center_ra=0, # lens ra position
+                                                                                        center_dec=0, # lens dec position
+                                                                                        subgrid_res=1, # resoluton factor of our images
+                                                                                        inverse=False) # invert east to west?
+lens_light_model = ['SERSIC_ELLIPSE'] # mass distribution to our lens model. 
 
-new_imaging = al.Imaging(residual_image, # cutout
-                         al.Array2D.manual(np.array(noise_map, dtype=float), pixel_scales=float(pixel_scale)), # noise_map 
-                         al.Kernel2D.manual(np.array(psf, dtype=float), pixel_scales=float(pixel_scale), shape_native=(100, 100))) # psf
+# some fit parameters
+kwargs_numerics = {'supersampling_factor': 1, 'supersampling_convolution': False}
 
-new_mask = al.Mask2D.circular(shape_native=new_imaging.shape_native, pixel_scales=pixel_scale, radius=8.)
-new_imaging = new_imaging.apply_mask(mask=new_mask)
+# setting our image class
+# data input parameters
+kwargs_data = {'background_rms': sky_rms,  # rms of background in ADUs
+               'exposure_time': expo_time,  # exposure time
+               'ra_at_xy_0': ra_at_xy_0,  # RA at (0,0) pixel
+               'dec_at_xy_0': dec_at_xy_0,  # DEC at (0,0) pixel 
+               'transform_pix2angle': Mpix2coord,  # matrix to translate shift in pixel in shift in relative RA/DEC (2x2 matrix). Make sure it's units are arcseconds or the angular units you want to model.
+               'image_data': np.zeros((100, 100))}  # 2d data vector, here initialized with zeros as place holders that get's overwritten once a simulated image with noise is created.
 
-bulge = af.Model(al.lmp.EllSersic)
-source_galaxy_model = af.Model(al.Galaxy,
-                               redshift=zs,
-                               bulge=bulge)
-# lens galaxy model
-lens_galaxy_model = af.Model(al.Galaxy,
-                             redshift=zl,
-                             mass=al.mp.EllIsothermal)    
+data_class = ImageData(**kwargs_data) 
+data_class.update_data(cutout)
+kwargs_data['image_data'] = cutout
 
-autolens_model = af.Collection(galaxies=af.Collection(lens=lens_galaxy_model, source=source_galaxy_model))
+# setting our priors
+######## Lens ########
+fixed_lens_light = []
+kwargs_lens_light_init = []
+kwargs_lens_light_sigma = []
+kwargs_lower_lens_light = []
+kwargs_upper_lens_light = []
 
-search = af.DynestyStatic(path_prefix = './',
-                          name = str(name) + '_lens_light_step_1',
-                          unique_tag = 'lenspop_deeplenstronomy_run0',
-                          nlive = 30,
-                          number_of_cores = 4) # be carefull here! verify your core numbers
-                          #session=session) 
+# initial guess, sigma, upper and lower parameters
+fixed_lens_light.append({})
+kwargs_lens_light_init.append({'R_sersic': .1, 'n_sersic': 4, 'e1': 0, 'e2': 0, 'center_x': 0, 'center_y': 0})
+kwargs_lens_light_sigma.append({'n_sersic': 0.5, 'R_sersic': 0.2, 'e1': 0.1, 'e2': 0.1, 'center_x': 0.1, 'center_y': 0.1})
+kwargs_lower_lens_light.append({'e1': -0.5, 'e2': -0.5, 'R_sersic': 0.01, 'n_sersic': 0.5, 'center_x': -10, 'center_y': -10})
+kwargs_upper_lens_light.append({'e1': 0.5, 'e2': 0.5, 'R_sersic': 10, 'n_sersic': 8, 'center_x': 10, 'center_y': 10})
 
-analysis = al.AnalysisImaging(dataset=new_imaging)
-step_1_result = search.fit(model=autolens_model, analysis=analysis) # fbd = full bright distribution
-'''
+# creating an object to have all this attributes
+lens_light_params = [kwargs_lens_light_init, kwargs_lens_light_sigma, fixed_lens_light, kwargs_lower_lens_light, kwargs_upper_lens_light]
+kwargs_params = {'lens_light_model': lens_light_params}
+
+# Likelihood kwargs
+kwargs_likelihood = {'source_marg': False}
+kwargs_model = {'lens_light_model_list': lens_light_model} # Sersic, SIE, etc
+# here, we have 1 single band to fit
+multi_band_list = [[kwargs_data, kwargs_psf, kwargs_numerics]] # in this example, just a single band fit
+# if you have multiple  bands to be modeled simultaneously, you can append them to the mutli_band_list
+kwargs_data_joint = {'multi_band_list': multi_band_list, 'multi_band_type': 'multi-linear'}  # 'multi-linear': every imaging band has independent solutions of the surface brightness, 'joint-linear': there is one joint solution of the linear coefficients demanded across the bands.
+# we dont have a constraint
+kwargs_constraints = {}
+
+# running an mcmc algorithm
+fitting_seq = FittingSequence(kwargs_data_joint, kwargs_model, kwargs_constraints, kwargs_likelihood, kwargs_params)
+
+fitting_kwargs_list = [['PSO', {'sigma_scale': 1., 'n_particles': 200, 'n_iterations': 200}]]
+
+chain_list = fitting_seq.fit_sequence(fitting_kwargs_list)
+kwargs_result = fitting_seq.best_fit()
+
+lens_light_model_class = LightModel(light_model_list=lens_light_model)
+
+imageModel = ImageModel(data_class, psf_class, lens_light_model_class=lens_light_model_class, kwargs_numerics=kwargs_numerics)
+image = imageModel.image(kwargs_lens_light=kwargs_result['kwargs_lens_light'])
+
+hdu = fits.PrimaryHDU(data=image)
+hdu.writeto('./fits_results/lens_light/'+str(name)+'_Lenstronomy[ELLSERSIC].fits')
