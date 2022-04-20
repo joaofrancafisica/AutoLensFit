@@ -47,7 +47,7 @@ kwargs_psf = {'psf_type': 'GAUSSIAN',
               'truncation': 4/seeing}
 psf_class = PSF(**kwargs_psf)
 psf = psf_class.kernel_point_source/np.max(psf_class.kernel_point_source)
-'''
+
 #print(psf)
 noise_map = np.sqrt((cutout*expo_time+float(sky_rms**2)))/expo_time
 
@@ -64,14 +64,15 @@ if radius_value > 3.:
     radius_value = 3.
 print(radius_value)
 
-mask = al.Mask2D.circular(shape_native=imaging.shape_native, pixel_scales=pixel_scale, radius=radius_value)
+mask = al.Mask2D.circular(shape_native=imaging.shape_native, pixel_scales=pixel_scale, radius=8.)
+
 masked_object = imaging.apply_mask(mask=mask)
 
 # model
 source_galaxy_model = af.Model(al.Galaxy,
                                redshift=zs)
-#lens_bulge = af.Model(al.lmp.SphSersic)
-lens_bulge = af.Model(al.lmp.EllSersic)
+lens_bulge = af.Model(al.lmp.SphSersic)
+#lens_bulge = af.Model(al.lmp.EllSersic)
 lens_galaxy_model = af.Model(al.Galaxy,
                              redshift=zl,
                              bulge=lens_bulge)
@@ -82,7 +83,7 @@ print('Fit using Dynesty Static method...')
 #session=af.db.open_database("database.sqlite")
 search = af.DynestyStatic(path_prefix='./',
                           name = str(name),
-                          unique_tag = 'LensLight_ELLSERSIC',
+                          unique_tag = 'LensLight_SPHSERSIC_nomask',
                           nlive = 50,
                           number_of_cores = 4) # be carefull here! verify your core numbers
                           #session=session) 
@@ -91,14 +92,14 @@ analysis = al.AnalysisImaging(dataset=masked_object)
 step_0_result = search.fit(model=lens_light_model, analysis=analysis)
 
 hdu = fits.PrimaryHDU(data=(step_0_result.unmasked_model_image).reshape(100, 100))
-hdu.writeto('./fits_results/lens_light/'+str(name)+'_AutoLens[ELLSERSIC].fits')
+hdu.writeto('./fits_results/lens_light/'+str(name)+'_AutoLens[SPHSERSIC_nomask].fits')
 
 #=========================== ImFit ================================
 imfitConfigFile = "./config_imfit/config_galaxy.dat"
 model_desc = pyimfit.ModelDescription.load(imfitConfigFile)
 
 imfit_fitter = pyimfit.Imfit(model_desc)
-imfit_fitter.fit(cutout, mask=mask.reshape(100, 100), gain=ccd_gain, read_noise=read_noise, original_sky=sky_rms)
+imfit_fitter.fit(cutout, gain=ccd_gain, read_noise=read_noise, original_sky=sky_rms)
 
 if imfit_fitter.fitConverged is True:
     print("Fit converged: chi^2 = {0}, reduced chi^2 = {1}".format(imfit_fitter.fitStatistic,
@@ -111,7 +112,7 @@ if imfit_fitter.fitConverged is True:
     f.close()
 
 hdu = fits.PrimaryHDU(data=imfit_fitter.getModelImage())
-hdu.writeto('./fits_results/lens_light/'+str(name)+'_ImFit[ELLSERSIC].fits')
+hdu.writeto('./fits_results/lens_light/'+str(name)+'_ImFit[SPHSERSIC_nomask].fits')
 '''
 #=========================== Lenstronomy ================================
 # general configurations
@@ -124,6 +125,7 @@ _, _, ra_at_xy_0, dec_at_xy_0, _, _, Mpix2coord, _ = util.make_grid_with_coordtr
 lens_light_model = ['SERSIC_ELLIPSE'] # mass distribution to our lens model. 
 
 # some fit parameters
+#lenstronomy_mask = np.invert(mask)*1
 kwargs_numerics = {'supersampling_factor': 1, 'supersampling_convolution': False}
 
 # setting our image class
@@ -149,10 +151,10 @@ kwargs_upper_lens_light = []
 
 # initial guess, sigma, upper and lower parameters
 fixed_lens_light.append({})
-kwargs_lens_light_init.append({'R_sersic': .1, 'n_sersic': 4, 'e1': 0, 'e2': 0, 'center_x': 0, 'center_y': 0})
-kwargs_lens_light_sigma.append({'n_sersic': 0.5, 'R_sersic': 0.2, 'e1': 0.1, 'e2': 0.1, 'center_x': 0.1, 'center_y': 0.1})
-kwargs_lower_lens_light.append({'e1': -0.5, 'e2': -0.5, 'R_sersic': 0.01, 'n_sersic': 0.5, 'center_x': -10, 'center_y': -10})
-kwargs_upper_lens_light.append({'e1': 0.5, 'e2': 0.5, 'R_sersic': 10, 'n_sersic': 8, 'center_x': 10, 'center_y': 10})
+kwargs_lens_light_init.append({'R_sersic': 4., 'n_sersic': 2., 'e1': 0., 'e2': 0., 'center_x': 0, 'center_y': 0})
+kwargs_lens_light_sigma.append({'n_sersic': 2.5, 'R_sersic': 1., 'e1': 0.5, 'e2': 0.5, 'center_x': 1., 'center_y': 1.})
+kwargs_lower_lens_light.append({'e1': -1., 'e2': -1., 'R_sersic': 1., 'n_sersic': 0.1, 'center_x': -10, 'center_y': -10})
+kwargs_upper_lens_light.append({'e1': 1., 'e2': 1., 'R_sersic': 8., 'n_sersic': 8., 'center_x': 10, 'center_y': 10})
 
 # creating an object to have all this attributes
 lens_light_params = [kwargs_lens_light_init, kwargs_lens_light_sigma, fixed_lens_light, kwargs_lower_lens_light, kwargs_upper_lens_light]
@@ -183,3 +185,4 @@ image = imageModel.image(kwargs_lens_light=kwargs_result['kwargs_lens_light'])
 
 hdu = fits.PrimaryHDU(data=image)
 hdu.writeto('./fits_results/lens_light/'+str(name)+'_Lenstronomy[ELLSERSIC].fits')
+'''

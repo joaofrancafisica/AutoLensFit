@@ -29,7 +29,7 @@ class getlenslight:
         method_dict = np.array(['ImFit', 'AutoLens', 'Lenstronomy'])
         self.method_dict = method_dict
         
-        model_dict = np.array(['SPHSERSIC', 'ELLSERSIC'])
+        model_dict = np.array(['SPHSERSIC', 'ELLSERSIC', 'SPHSERSIC_nomask'])
         self.model_dict = model_dict
         
         self.pre_path = pre_path
