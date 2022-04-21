@@ -37105,3 +37105,384 @@ TypeError: 'RecursionPromise' object is not iterable
 2022-04-19 14:47:28,042 - 2848 - INFO - 20000 Iterations: Performing update (Visualization, outputting samples, etc.).
 2022-04-19 14:47:45,997 - 2848 - INFO - 25000 Iterations: Performing update (Visualization, outputting samples, etc.).
 2022-04-19 14:48:09,970 - 2848 - INFO - Removing zip file
+2022-04-21 15:35:27,046 - autoarray.dataset.imaging - INFO - IMAGING - Data masked, contains a total of 60 image-pixels
+2022-04-21 15:35:27,137 - autofit.non_linear.abstract_search - INFO - Creating search
+2022-04-21 15:35:27,137 - 1502 - INFO - Starting search
+2022-04-21 15:35:45,292 - autoarray.dataset.imaging - INFO - IMAGING - Data masked, contains a total of 60 image-pixels
+2022-04-21 15:35:45,366 - autofit.non_linear.abstract_search - INFO - Creating search
+2022-04-21 15:35:45,367 - 1502 - INFO - Starting search
+2022-04-21 15:35:46,220 - autolens.imaging.model.analysis - INFO - PRELOADS - Setting up preloads, may take a few minutes for fits using an inversion.
+2022-04-21 15:35:46,283 - 1502 - INFO - Saving path info
+2022-04-21 15:35:46,317 - 1502 - INFO - Not complete. Starting non-linear search.
+2022-04-21 15:35:46,317 - 1502 - INFO - number_of_cores == 4...
+2022-04-21 15:35:46,317 - 1502 - WARNING - ...using SneakyPool. This copies the likelihood functionto each process on instantiation to avoid copying multipletimes.
+2022-04-21 15:35:46,318 - process 0 - INFO - created
+2022-04-21 15:35:46,319 - process 1 - INFO - created
+2022-04-21 15:35:46,319 - process 2 - INFO - created
+2022-04-21 15:35:46,320 - process 3 - INFO - created
+2022-04-21 15:35:46,383 - autofit.non_linear.initializer - INFO - Generating initial samples of model, which are subject to prior limits and other constraints.
+2022-04-21 15:35:46,579 - 1502 - INFO - No Dynesty samples found, beginning new non-linear search. 
+2022-04-21 15:36:09,078 - 1502 - INFO - 5000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:36:23,256 - 1502 - INFO - 10000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:36:28,907 - 1502 - INFO - 15000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:36:34,294 - 1502 - INFO - 20000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:37:18,085 - autoarray.dataset.imaging - INFO - IMAGING - Data masked, contains a total of 44 image-pixels
+2022-04-21 15:37:18,161 - autofit.non_linear.abstract_search - INFO - Creating search
+2022-04-21 15:37:18,161 - 916 - INFO - Starting search
+2022-04-21 15:37:18,969 - autolens.imaging.model.analysis - INFO - PRELOADS - Setting up preloads, may take a few minutes for fits using an inversion.
+2022-04-21 15:37:19,029 - 916 - INFO - Saving path info
+2022-04-21 15:37:19,062 - 916 - INFO - Not complete. Starting non-linear search.
+2022-04-21 15:37:19,062 - 916 - INFO - number_of_cores == 4...
+2022-04-21 15:37:19,062 - 916 - WARNING - ...using SneakyPool. This copies the likelihood functionto each process on instantiation to avoid copying multipletimes.
+2022-04-21 15:37:19,062 - process 0 - INFO - created
+2022-04-21 15:37:19,063 - process 1 - INFO - created
+2022-04-21 15:37:19,064 - process 2 - INFO - created
+2022-04-21 15:37:19,064 - process 3 - INFO - created
+2022-04-21 15:37:19,081 - autofit.non_linear.initializer - INFO - Generating initial samples of model, which are subject to prior limits and other constraints.
+2022-04-21 15:37:19,223 - 916 - INFO - No Dynesty samples found, beginning new non-linear search. 
+2022-04-21 15:37:36,601 - 916 - INFO - 5000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:37:55,280 - 916 - INFO - 10000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:38:01,689 - 916 - INFO - 15000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:38:07,171 - 916 - INFO - 20000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:38:19,592 - 916 - INFO - Removing zip file
+2022-04-21 15:42:52,052 - autoarray.dataset.imaging - INFO - IMAGING - Data masked, contains a total of 60 image-pixels
+2022-04-21 15:42:52,126 - autofit.non_linear.abstract_search - INFO - Creating search
+2022-04-21 15:42:52,127 - 1502 - INFO - Starting search
+2022-04-21 15:42:52,944 - autolens.imaging.model.analysis - INFO - PRELOADS - Setting up preloads, may take a few minutes for fits using an inversion.
+2022-04-21 15:42:53,009 - 1502 - INFO - Saving path info
+2022-04-21 15:42:53,043 - 1502 - INFO - Not complete. Starting non-linear search.
+2022-04-21 15:42:53,044 - 1502 - INFO - number_of_cores == 4...
+2022-04-21 15:42:53,044 - 1502 - WARNING - ...using SneakyPool. This copies the likelihood functionto each process on instantiation to avoid copying multipletimes.
+2022-04-21 15:42:53,045 - process 0 - INFO - created
+2022-04-21 15:42:53,045 - process 1 - INFO - created
+2022-04-21 15:42:53,046 - process 2 - INFO - created
+2022-04-21 15:42:53,046 - process 3 - INFO - created
+2022-04-21 15:42:53,062 - autofit.non_linear.initializer - INFO - Generating initial samples of model, which are subject to prior limits and other constraints.
+2022-04-21 15:42:53,229 - 1502 - INFO - No Dynesty samples found, beginning new non-linear search. 
+2022-04-21 15:43:07,983 - 1502 - INFO - 5000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:43:25,286 - 1502 - INFO - 10000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:43:32,788 - 1502 - INFO - 15000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:43:39,734 - 1502 - INFO - 20000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:43:52,353 - 1502 - INFO - Removing zip file
+2022-04-21 15:43:55,858 - autoarray.dataset.imaging - INFO - IMAGING - Data masked, contains a total of 32 image-pixels
+2022-04-21 15:43:55,937 - autofit.non_linear.abstract_search - INFO - Creating search
+2022-04-21 15:43:55,938 - 706 - INFO - Starting search
+2022-04-21 15:43:56,958 - autolens.imaging.model.analysis - INFO - PRELOADS - Setting up preloads, may take a few minutes for fits using an inversion.
+2022-04-21 15:43:57,016 - 706 - INFO - Saving path info
+2022-04-21 15:43:57,051 - 706 - INFO - Not complete. Starting non-linear search.
+2022-04-21 15:43:57,051 - 706 - INFO - number_of_cores == 4...
+2022-04-21 15:43:57,052 - 706 - WARNING - ...using SneakyPool. This copies the likelihood functionto each process on instantiation to avoid copying multipletimes.
+2022-04-21 15:43:57,052 - process 0 - INFO - created
+2022-04-21 15:43:57,053 - process 1 - INFO - created
+2022-04-21 15:43:57,053 - process 2 - INFO - created
+2022-04-21 15:43:57,054 - process 3 - INFO - created
+2022-04-21 15:43:57,068 - autofit.non_linear.initializer - INFO - Generating initial samples of model, which are subject to prior limits and other constraints.
+2022-04-21 15:43:57,220 - 706 - INFO - No Dynesty samples found, beginning new non-linear search. 
+2022-04-21 15:44:14,285 - 706 - INFO - 5000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:44:36,937 - 706 - INFO - 10000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:44:49,815 - 706 - INFO - 15000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:44:56,842 - 706 - INFO - 20000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:45:03,227 - 706 - INFO - 25000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:45:15,243 - 706 - INFO - Removing zip file
+2022-04-21 15:45:18,588 - autoarray.dataset.imaging - INFO - IMAGING - Data masked, contains a total of 80 image-pixels
+2022-04-21 15:45:18,669 - autofit.non_linear.abstract_search - INFO - Creating search
+2022-04-21 15:45:18,670 - 107 - INFO - Starting search
+2022-04-21 15:45:19,909 - autolens.imaging.model.analysis - INFO - PRELOADS - Setting up preloads, may take a few minutes for fits using an inversion.
+2022-04-21 15:45:19,972 - 107 - INFO - Saving path info
+2022-04-21 15:45:20,006 - 107 - INFO - Not complete. Starting non-linear search.
+2022-04-21 15:45:20,007 - 107 - INFO - number_of_cores == 4...
+2022-04-21 15:45:20,007 - 107 - WARNING - ...using SneakyPool. This copies the likelihood functionto each process on instantiation to avoid copying multipletimes.
+2022-04-21 15:45:20,007 - process 0 - INFO - created
+2022-04-21 15:45:20,008 - process 1 - INFO - created
+2022-04-21 15:45:20,008 - process 2 - INFO - created
+2022-04-21 15:45:20,009 - process 3 - INFO - created
+2022-04-21 15:45:20,024 - autofit.non_linear.initializer - INFO - Generating initial samples of model, which are subject to prior limits and other constraints.
+2022-04-21 15:45:20,174 - 107 - INFO - No Dynesty samples found, beginning new non-linear search. 
+2022-04-21 15:45:35,616 - process 0 - ERROR - 'RecursionPromise' object is not iterable
+Traceback (most recent call last):
+  File "/home/joao/.local/lib/python3.8/site-packages/dynesty/dynesty.py", line 939, in __call__
+    return self.func(x, *self.args, **self.kwargs)
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/non_linear/nest/dynesty/abstract.py", line 18, in prior_transform
+    phys_cube = model.vector_from_unit_vector(
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/mapper/prior_model/abstract.py", line 603, in vector_from_unit_vector
+    self.prior_tuples_ordered_by_id,
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/mapper/prior_model/attribute_pair.py", line 8, in wrapper
+    return list(map(lambda tup: named_tuple(*tup), func(*args, **kwargs)))
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/mapper/prior_model/abstract.py", line 568, in prior_tuples_ordered_by_id
+    list(self.unique_prior_tuples), key=lambda prior_tuple: prior_tuple.prior.id
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/mapper/prior_model/attribute_pair.py", line 8, in wrapper
+    return list(map(lambda tup: named_tuple(*tup), func(*args, **kwargs)))
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/mapper/model.py", line 45, in cache
+    return func(self, *args, **kwargs)
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/mapper/prior_model/abstract.py", line 555, in unique_prior_tuples
+    for prior_tuple in self.attribute_tuples_with_type(Prior)
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/mapper/model.py", line 45, in cache
+    return func(self, *args, **kwargs)
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/mapper/model.py", line 274, in attribute_tuples_with_type
+    for path, value in self.path_instance_tuples_for_class(
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/mapper/model.py", line 45, in cache
+    return func(self, *args, **kwargs)
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/mapper/model.py", line 204, in path_instance_tuples_for_class
+    return path_instances_of_class(
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/mapper/prior_model/recursion.py", line 83, in wrapper
+    result = func(item, *args, **kwargs)
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/mapper/model.py", line 326, in path_instances_of_class
+    for item in path_instances_of_class(
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/mapper/prior_model/recursion.py", line 83, in wrapper
+    result = func(item, *args, **kwargs)
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/mapper/model.py", line 326, in path_instances_of_class
+    for item in path_instances_of_class(
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/mapper/prior_model/recursion.py", line 84, in wrapper
+    result = replace_promise(recursion_promise, result, result)
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/mapper/prior_model/recursion.py", line 35, in replace_promise
+    return [
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/mapper/prior_model/recursion.py", line 35, in <listcomp>
+    return [
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/non_linear/parallel/sneaky.py", line 188, in run
+    job.perform(
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/non_linear/parallel/sneaky.py", line 136, in perform
+    return self.function(
+  File "/home/joao/.local/lib/python3.8/site-packages/dynesty/sampling.py", line 223, in sample_rwalk
+    v_prop = prior_transform(np.array(u_prop))
+  File "/home/joao/.local/lib/python3.8/site-packages/dynesty/dynesty.py", line 944, in __call__
+    print("  args:", self.args)
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/mapper/prior_model/collection.py", line 48, in __repr__
+    return f"<{self.__class__.__name__} {self}>"
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/mapper/prior_model/collection.py", line 41, in __str__
+    return "\n".join(
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/mapper/prior_model/collection.py", line 42, in <genexpr>
+    f"{key} = {value}"
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/mapper/prior_model/collection.py", line 41, in __str__
+    return "\n".join(
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/mapper/prior_model/collection.py", line 42, in <genexpr>
+    f"{key} = {value}"
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/mapper/prior_model/prior_model.py", line 31, in __str__
+    prior_string = ", ".join(map(str, self.prior_tuples))
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/mapper/prior_model/attribute_pair.py", line 8, in wrapper
+    return list(map(lambda tup: named_tuple(*tup), func(*args, **kwargs)))
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/mapper/prior_model/abstract.py", line 1069, in prior_tuples
+    return self.attribute_tuples_with_type(
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/mapper/model.py", line 45, in cache
+    return func(self, *args, **kwargs)
+  File "/home/joao/.local/lib/python3.8/site-packages/autofit/mapper/model.py", line 272, in attribute_tuples_with_type
+    return [
+TypeError: 'RecursionPromise' object is not iterable
+2022-04-21 15:46:41,384 - autoarray.dataset.imaging - INFO - IMAGING - Data masked, contains a total of 60 image-pixels
+2022-04-21 15:46:41,459 - autofit.non_linear.abstract_search - INFO - Creating search
+2022-04-21 15:46:41,459 - 1502 - INFO - Starting search
+2022-04-21 15:46:42,199 - autolens.imaging.model.analysis - INFO - PRELOADS - Setting up preloads, may take a few minutes for fits using an inversion.
+2022-04-21 15:46:42,261 - 1502 - INFO - Saving path info
+2022-04-21 15:46:42,295 - 1502 - INFO - Not complete. Starting non-linear search.
+2022-04-21 15:46:42,295 - 1502 - INFO - number_of_cores == 4...
+2022-04-21 15:46:42,295 - 1502 - WARNING - ...using SneakyPool. This copies the likelihood functionto each process on instantiation to avoid copying multipletimes.
+2022-04-21 15:46:42,296 - process 0 - INFO - created
+2022-04-21 15:46:42,296 - process 1 - INFO - created
+2022-04-21 15:46:42,297 - process 2 - INFO - created
+2022-04-21 15:46:42,297 - process 3 - INFO - created
+2022-04-21 15:46:42,312 - autofit.non_linear.initializer - INFO - Generating initial samples of model, which are subject to prior limits and other constraints.
+2022-04-21 15:46:42,475 - 1502 - INFO - No Dynesty samples found, beginning new non-linear search. 
+2022-04-21 15:47:14,835 - autoarray.dataset.imaging - INFO - IMAGING - Data masked, contains a total of 60 image-pixels
+2022-04-21 15:47:14,913 - autofit.non_linear.abstract_search - INFO - Creating search
+2022-04-21 15:47:14,913 - 1502 - INFO - Starting search
+2022-04-21 15:47:15,722 - autolens.imaging.model.analysis - INFO - PRELOADS - Setting up preloads, may take a few minutes for fits using an inversion.
+2022-04-21 15:47:15,776 - 1502 - INFO - Saving path info
+2022-04-21 15:47:15,808 - 1502 - INFO - Not complete. Starting non-linear search.
+2022-04-21 15:47:15,808 - 1502 - INFO - number_of_cores == 4...
+2022-04-21 15:47:15,809 - 1502 - WARNING - ...using SneakyPool. This copies the likelihood functionto each process on instantiation to avoid copying multipletimes.
+2022-04-21 15:47:15,809 - process 0 - INFO - created
+2022-04-21 15:47:15,810 - process 1 - INFO - created
+2022-04-21 15:47:15,811 - process 2 - INFO - created
+2022-04-21 15:47:15,811 - process 3 - INFO - created
+2022-04-21 15:47:15,835 - autofit.non_linear.initializer - INFO - Generating initial samples of model, which are subject to prior limits and other constraints.
+2022-04-21 15:47:15,988 - 1502 - INFO - No Dynesty samples found, beginning new non-linear search. 
+2022-04-21 15:47:29,878 - 1502 - INFO - 5000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:47:48,651 - 1502 - INFO - 10000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:47:56,717 - 1502 - INFO - 15000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:48:02,794 - 1502 - INFO - 20000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:48:08,510 - 1502 - INFO - 25000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:48:19,659 - 1502 - INFO - Removing zip file
+2022-04-21 15:48:22,897 - autoarray.dataset.imaging - INFO - IMAGING - Data masked, contains a total of 276 image-pixels
+2022-04-21 15:48:22,974 - autofit.non_linear.abstract_search - INFO - Creating search
+2022-04-21 15:48:22,975 - 2587 - INFO - Starting search
+2022-04-21 15:48:23,898 - autolens.imaging.model.analysis - INFO - PRELOADS - Setting up preloads, may take a few minutes for fits using an inversion.
+2022-04-21 15:48:23,971 - 2587 - INFO - Saving path info
+2022-04-21 15:48:24,014 - 2587 - INFO - Not complete. Starting non-linear search.
+2022-04-21 15:48:24,014 - 2587 - INFO - number_of_cores == 4...
+2022-04-21 15:48:24,014 - 2587 - WARNING - ...using SneakyPool. This copies the likelihood functionto each process on instantiation to avoid copying multipletimes.
+2022-04-21 15:48:24,015 - process 0 - INFO - created
+2022-04-21 15:48:24,016 - process 1 - INFO - created
+2022-04-21 15:48:24,017 - process 2 - INFO - created
+2022-04-21 15:48:24,017 - process 3 - INFO - created
+2022-04-21 15:48:24,035 - autofit.non_linear.initializer - INFO - Generating initial samples of model, which are subject to prior limits and other constraints.
+2022-04-21 15:48:24,195 - 2587 - INFO - No Dynesty samples found, beginning new non-linear search. 
+2022-04-21 15:48:42,386 - 2587 - INFO - 5000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:49:04,092 - 2587 - INFO - 10000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:49:25,573 - 2587 - INFO - 15000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:49:48,067 - 2587 - INFO - 20000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:50:13,214 - 2587 - INFO - 25000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:50:41,455 - 2587 - INFO - 30000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:50:59,706 - 2587 - INFO - 35000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:51:13,765 - 2587 - INFO - 40000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:51:21,648 - 2587 - INFO - 45000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:51:36,068 - 2587 - INFO - Removing zip file
+2022-04-21 15:51:39,976 - autoarray.dataset.imaging - INFO - IMAGING - Data masked, contains a total of 24 image-pixels
+2022-04-21 15:51:40,076 - autofit.non_linear.abstract_search - INFO - Creating search
+2022-04-21 15:51:40,077 - 2654 - INFO - Starting search
+2022-04-21 15:51:40,984 - autolens.imaging.model.analysis - INFO - PRELOADS - Setting up preloads, may take a few minutes for fits using an inversion.
+2022-04-21 15:51:41,039 - 2654 - INFO - Saving path info
+2022-04-21 15:51:41,073 - 2654 - INFO - Not complete. Starting non-linear search.
+2022-04-21 15:51:41,074 - 2654 - INFO - number_of_cores == 4...
+2022-04-21 15:51:41,074 - 2654 - WARNING - ...using SneakyPool. This copies the likelihood functionto each process on instantiation to avoid copying multipletimes.
+2022-04-21 15:51:41,074 - process 0 - INFO - created
+2022-04-21 15:51:41,075 - process 1 - INFO - created
+2022-04-21 15:51:41,076 - process 2 - INFO - created
+2022-04-21 15:51:41,077 - process 3 - INFO - created
+2022-04-21 15:51:41,108 - autofit.non_linear.initializer - INFO - Generating initial samples of model, which are subject to prior limits and other constraints.
+2022-04-21 15:51:41,333 - 2654 - INFO - No Dynesty samples found, beginning new non-linear search. 
+2022-04-21 15:51:58,769 - 2654 - INFO - 5000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:52:18,310 - 2654 - INFO - 10000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:52:24,671 - 2654 - INFO - 15000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:52:30,499 - 2654 - INFO - 20000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:52:41,998 - 2654 - INFO - Removing zip file
+2022-04-21 15:52:45,357 - autoarray.dataset.imaging - INFO - IMAGING - Data masked, contains a total of 148 image-pixels
+2022-04-21 15:52:45,434 - autofit.non_linear.abstract_search - INFO - Creating search
+2022-04-21 15:52:45,434 - 1056 - INFO - Starting search
+2022-04-21 15:52:46,217 - autolens.imaging.model.analysis - INFO - PRELOADS - Setting up preloads, may take a few minutes for fits using an inversion.
+2022-04-21 15:52:46,283 - 1056 - INFO - Saving path info
+2022-04-21 15:52:46,318 - 1056 - INFO - Not complete. Starting non-linear search.
+2022-04-21 15:52:46,318 - 1056 - INFO - number_of_cores == 4...
+2022-04-21 15:52:46,318 - 1056 - WARNING - ...using SneakyPool. This copies the likelihood functionto each process on instantiation to avoid copying multipletimes.
+2022-04-21 15:52:46,319 - process 0 - INFO - created
+2022-04-21 15:52:46,321 - process 1 - INFO - created
+2022-04-21 15:52:46,322 - process 2 - INFO - created
+2022-04-21 15:52:46,322 - process 3 - INFO - created
+2022-04-21 15:52:46,346 - autofit.non_linear.initializer - INFO - Generating initial samples of model, which are subject to prior limits and other constraints.
+2022-04-21 15:52:46,496 - 1056 - INFO - No Dynesty samples found, beginning new non-linear search. 
+2022-04-21 15:53:02,720 - 1056 - INFO - 5000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:53:16,892 - 1056 - INFO - 10000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:53:22,843 - 1056 - INFO - 15000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:53:28,472 - 1056 - INFO - 20000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:53:39,636 - 1056 - INFO - Removing zip file
+2022-04-21 15:53:42,890 - autoarray.dataset.imaging - INFO - IMAGING - Data masked, contains a total of 32 image-pixels
+2022-04-21 15:53:42,965 - autofit.non_linear.abstract_search - INFO - Creating search
+2022-04-21 15:53:42,965 - 706 - INFO - Starting search
+2022-04-21 15:53:43,819 - autolens.imaging.model.analysis - INFO - PRELOADS - Setting up preloads, may take a few minutes for fits using an inversion.
+2022-04-21 15:53:43,875 - 706 - INFO - Saving path info
+2022-04-21 15:53:43,908 - 706 - INFO - Not complete. Starting non-linear search.
+2022-04-21 15:53:43,909 - 706 - INFO - number_of_cores == 4...
+2022-04-21 15:53:43,909 - 706 - WARNING - ...using SneakyPool. This copies the likelihood functionto each process on instantiation to avoid copying multipletimes.
+2022-04-21 15:53:43,909 - process 0 - INFO - created
+2022-04-21 15:53:43,910 - process 1 - INFO - created
+2022-04-21 15:53:43,911 - process 2 - INFO - created
+2022-04-21 15:53:43,911 - process 3 - INFO - created
+2022-04-21 15:53:43,934 - autofit.non_linear.initializer - INFO - Generating initial samples of model, which are subject to prior limits and other constraints.
+2022-04-21 15:53:44,074 - 706 - INFO - No Dynesty samples found, beginning new non-linear search. 
+2022-04-21 15:53:59,880 - 706 - INFO - 5000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:54:18,244 - 706 - INFO - 10000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:54:24,242 - 706 - INFO - 15000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:54:30,444 - 706 - INFO - 20000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:54:42,425 - 706 - INFO - Removing zip file
+2022-04-21 15:54:45,976 - autoarray.dataset.imaging - INFO - IMAGING - Data masked, contains a total of 80 image-pixels
+2022-04-21 15:54:46,068 - autofit.non_linear.abstract_search - INFO - Creating search
+2022-04-21 15:54:46,070 - 107 - INFO - Starting search
+2022-04-21 15:54:47,086 - autolens.imaging.model.analysis - INFO - PRELOADS - Setting up preloads, may take a few minutes for fits using an inversion.
+2022-04-21 15:54:47,154 - 107 - INFO - Saving path info
+2022-04-21 15:54:47,198 - 107 - INFO - Not complete. Starting non-linear search.
+2022-04-21 15:54:47,198 - 107 - INFO - number_of_cores == 4...
+2022-04-21 15:54:47,199 - 107 - WARNING - ...using SneakyPool. This copies the likelihood functionto each process on instantiation to avoid copying multipletimes.
+2022-04-21 15:54:47,199 - process 0 - INFO - created
+2022-04-21 15:54:47,200 - process 1 - INFO - created
+2022-04-21 15:54:47,201 - process 2 - INFO - created
+2022-04-21 15:54:47,201 - process 3 - INFO - created
+2022-04-21 15:54:47,227 - autofit.non_linear.initializer - INFO - Generating initial samples of model, which are subject to prior limits and other constraints.
+2022-04-21 15:54:47,417 - 107 - INFO - No Dynesty samples found, beginning new non-linear search. 
+2022-04-21 15:55:07,848 - 107 - INFO - 5000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:55:25,483 - 107 - INFO - 10000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:55:32,275 - 107 - INFO - 15000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:55:39,498 - 107 - INFO - 20000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:55:52,695 - 107 - INFO - Removing zip file
+2022-04-21 15:55:57,017 - autoarray.dataset.imaging - INFO - IMAGING - Data masked, contains a total of 400 image-pixels
+2022-04-21 15:55:57,097 - autofit.non_linear.abstract_search - INFO - Creating search
+2022-04-21 15:55:57,097 - 590 - INFO - Starting search
+2022-04-21 15:55:57,998 - autolens.imaging.model.analysis - INFO - PRELOADS - Setting up preloads, may take a few minutes for fits using an inversion.
+2022-04-21 15:55:58,076 - 590 - INFO - Saving path info
+2022-04-21 15:55:58,111 - 590 - INFO - Not complete. Starting non-linear search.
+2022-04-21 15:55:58,111 - 590 - INFO - number_of_cores == 4...
+2022-04-21 15:55:58,111 - 590 - WARNING - ...using SneakyPool. This copies the likelihood functionto each process on instantiation to avoid copying multipletimes.
+2022-04-21 15:55:58,112 - process 0 - INFO - created
+2022-04-21 15:55:58,112 - process 1 - INFO - created
+2022-04-21 15:55:58,113 - process 2 - INFO - created
+2022-04-21 15:55:58,113 - process 3 - INFO - created
+2022-04-21 15:55:58,137 - autofit.non_linear.initializer - INFO - Generating initial samples of model, which are subject to prior limits and other constraints.
+2022-04-21 15:55:58,308 - 590 - INFO - No Dynesty samples found, beginning new non-linear search. 
+2022-04-21 15:56:18,745 - 590 - INFO - 5000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:56:40,534 - 590 - INFO - 10000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:57:05,265 - 590 - INFO - 15000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:57:44,252 - 590 - INFO - 20000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:58:08,131 - 590 - INFO - 25000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:58:15,602 - 590 - INFO - 30000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:58:22,501 - 590 - INFO - 35000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:58:36,058 - 590 - INFO - Removing zip file
+2022-04-21 15:58:40,591 - autoarray.dataset.imaging - INFO - IMAGING - Data masked, contains a total of 32 image-pixels
+2022-04-21 15:58:40,687 - autofit.non_linear.abstract_search - INFO - Creating search
+2022-04-21 15:58:40,688 - 2469 - INFO - Starting search
+2022-04-21 15:58:41,585 - autolens.imaging.model.analysis - INFO - PRELOADS - Setting up preloads, may take a few minutes for fits using an inversion.
+2022-04-21 15:58:41,641 - 2469 - INFO - Saving path info
+2022-04-21 15:58:41,673 - 2469 - INFO - Not complete. Starting non-linear search.
+2022-04-21 15:58:41,674 - 2469 - INFO - number_of_cores == 4...
+2022-04-21 15:58:41,674 - 2469 - WARNING - ...using SneakyPool. This copies the likelihood functionto each process on instantiation to avoid copying multipletimes.
+2022-04-21 15:58:41,675 - process 0 - INFO - created
+2022-04-21 15:58:41,675 - process 1 - INFO - created
+2022-04-21 15:58:41,676 - process 2 - INFO - created
+2022-04-21 15:58:41,676 - process 3 - INFO - created
+2022-04-21 15:58:41,699 - autofit.non_linear.initializer - INFO - Generating initial samples of model, which are subject to prior limits and other constraints.
+2022-04-21 15:58:41,843 - 2469 - INFO - No Dynesty samples found, beginning new non-linear search. 
+2022-04-21 15:58:58,165 - 2469 - INFO - 5000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:59:13,374 - 2469 - INFO - 10000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:59:19,668 - 2469 - INFO - 15000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:59:25,727 - 2469 - INFO - 20000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 15:59:38,229 - 2469 - INFO - Removing zip file
+2022-04-21 15:59:41,681 - autoarray.dataset.imaging - INFO - IMAGING - Data masked, contains a total of 44 image-pixels
+2022-04-21 15:59:41,757 - autofit.non_linear.abstract_search - INFO - Creating search
+2022-04-21 15:59:41,758 - 2414 - INFO - Starting search
+2022-04-21 15:59:42,646 - autolens.imaging.model.analysis - INFO - PRELOADS - Setting up preloads, may take a few minutes for fits using an inversion.
+2022-04-21 15:59:42,710 - 2414 - INFO - Saving path info
+2022-04-21 15:59:42,746 - 2414 - INFO - Not complete. Starting non-linear search.
+2022-04-21 15:59:42,746 - 2414 - INFO - number_of_cores == 4...
+2022-04-21 15:59:42,746 - 2414 - WARNING - ...using SneakyPool. This copies the likelihood functionto each process on instantiation to avoid copying multipletimes.
+2022-04-21 15:59:42,747 - process 0 - INFO - created
+2022-04-21 15:59:42,747 - process 1 - INFO - created
+2022-04-21 15:59:42,748 - process 2 - INFO - created
+2022-04-21 15:59:42,748 - process 3 - INFO - created
+2022-04-21 15:59:42,772 - autofit.non_linear.initializer - INFO - Generating initial samples of model, which are subject to prior limits and other constraints.
+2022-04-21 15:59:42,920 - 2414 - INFO - No Dynesty samples found, beginning new non-linear search. 
+2022-04-21 15:59:59,322 - 2414 - INFO - 5000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 16:00:17,729 - 2414 - INFO - 10000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 16:00:23,677 - 2414 - INFO - 15000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 16:00:29,287 - 2414 - INFO - 20000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 16:00:40,776 - 2414 - INFO - Removing zip file
+2022-04-21 16:00:44,129 - autoarray.dataset.imaging - INFO - IMAGING - Data masked, contains a total of 32 image-pixels
+2022-04-21 16:00:44,207 - autofit.non_linear.abstract_search - INFO - Creating search
+2022-04-21 16:00:44,208 - 1601 - INFO - Starting search
+2022-04-21 16:00:45,096 - autolens.imaging.model.analysis - INFO - PRELOADS - Setting up preloads, may take a few minutes for fits using an inversion.
+2022-04-21 16:00:45,161 - 1601 - INFO - Saving path info
+2022-04-21 16:00:45,210 - 1601 - INFO - Not complete. Starting non-linear search.
+2022-04-21 16:00:45,211 - 1601 - INFO - number_of_cores == 4...
+2022-04-21 16:00:45,211 - 1601 - WARNING - ...using SneakyPool. This copies the likelihood functionto each process on instantiation to avoid copying multipletimes.
+2022-04-21 16:00:45,211 - process 0 - INFO - created
+2022-04-21 16:00:45,212 - process 1 - INFO - created
+2022-04-21 16:00:45,212 - process 2 - INFO - created
+2022-04-21 16:00:45,213 - process 3 - INFO - created
+2022-04-21 16:00:45,238 - autofit.non_linear.initializer - INFO - Generating initial samples of model, which are subject to prior limits and other constraints.
+2022-04-21 16:00:45,428 - 1601 - INFO - No Dynesty samples found, beginning new non-linear search. 
+2022-04-21 16:01:01,878 - 1601 - INFO - 5000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 16:01:18,045 - 1601 - INFO - 10000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 16:01:23,979 - 1601 - INFO - 15000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 16:01:29,626 - 1601 - INFO - 20000 Iterations: Performing update (Visualization, outputting samples, etc.).
+2022-04-21 16:01:40,846 - 1601 - INFO - Removing zip file
+2022-04-21 16:49:04,899 - autoarray.dataset.imaging - INFO - IMAGING - Data masked, contains a total of 12 image-pixels

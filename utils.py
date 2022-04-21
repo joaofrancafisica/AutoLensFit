@@ -4,6 +4,18 @@ from scipy.optimize import minimize
 from astropy.io import fits
 import os
 
+class lens_light_test:
+    def __init__(self, image_array):
+        self.image_array=np.array(image_array)
+    def test(self):
+        image_bellow_zero=-cutout
+        min_value=np.min(image_bellow_zero)
+        [x_index], [y_index] = np.where(image_bellow_zero==min_value)
+        if 45 < x_index< 55 and 45 < y_index< 55:
+            return True, x_index, y_index
+        else:
+            return False, x_index, y_index
+        
 class find_radius:
     def __init__(self, pre_set_sigma, image_array):
         axis_integrated_image = np.sum(image_array, axis=0)
@@ -53,3 +65,10 @@ class getpickle:
         
     def read_pickle(self):
         return pd.read_pickle(str(self.full_file_name))  
+
+class rotate_matrix:
+    def __init__(self, matrix):
+        self.matrix = matrix
+    def rotate(self):
+        return [[self.matrix[jj][ii] for jj in range(len(self.matrix))] for ii in range(len(self.matrix[0])-1,-1,-1)]
+    

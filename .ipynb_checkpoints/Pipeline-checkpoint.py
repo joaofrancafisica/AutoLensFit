@@ -25,6 +25,7 @@ name = int(sys.argv[1])
 print(name)
 
 modelized_systems = pd.read_csv('./test_dataset.csv')
+#print(modelized_systems)
 modelized_systems_select = modelized_systems[modelized_systems['OBJID-g'] == name]
 modelized_systems_select.reset_index(inplace=True)
 
@@ -64,7 +65,7 @@ if radius_value > 3.:
     radius_value = 3.
 print(radius_value)
 
-mask = al.Mask2D.circular(shape_native=imaging.shape_native, pixel_scales=pixel_scale, radius=8.)
+mask = al.Mask2D.circular(shape_native=imaging.shape_native, pixel_scales=pixel_scale, radius=radius_value)
 
 masked_object = imaging.apply_mask(mask=mask)
 
@@ -83,7 +84,7 @@ print('Fit using Dynesty Static method...')
 #session=af.db.open_database("database.sqlite")
 search = af.DynestyStatic(path_prefix='./',
                           name = str(name),
-                          unique_tag = 'LensLight_SPHSERSIC_nomask',
+                          unique_tag = 'LensLight_SPHSERSIC',
                           nlive = 50,
                           number_of_cores = 4) # be carefull here! verify your core numbers
                           #session=session) 
@@ -91,8 +92,13 @@ search = af.DynestyStatic(path_prefix='./',
 analysis = al.AnalysisImaging(dataset=masked_object)
 step_0_result = search.fit(model=lens_light_model, analysis=analysis)
 
-hdu = fits.PrimaryHDU(data=(step_0_result.unmasked_model_image).reshape(100, 100))
-hdu.writeto('./fits_results/lens_light/'+str(name)+'_AutoLens[SPHSERSIC_nomask].fits')
+image_output_autolens = (step_0_result.unmasked_model_image).reshape(100, 100)
+# rotate once
+rotate_image = utils.rotate_matrix(image_output_autolens)
+rotate_image = rotate_image.rotate()
+
+hdu = fits.PrimaryHDU(data=rotate_image)
+hdu.writeto('./fits_results/lens_light/'+str(name)+'_AutoLens[SPHSERSIC].fits')
 
 #=========================== ImFit ================================
 imfitConfigFile = "./config_imfit/config_galaxy.dat"
@@ -112,7 +118,7 @@ if imfit_fitter.fitConverged is True:
     f.close()
 
 hdu = fits.PrimaryHDU(data=imfit_fitter.getModelImage())
-hdu.writeto('./fits_results/lens_light/'+str(name)+'_ImFit[SPHSERSIC_nomask].fits')
+hdu.writeto('./fits_results/lens_light/'+str(name)+'_ImFit[SPHSERSIC].fits')
 '''
 #=========================== Lenstronomy ================================
 # general configurations
